@@ -1,0 +1,4 @@
+sudo clab deploy
+sudo clab destroy
+
+sudo docker exec -it clab-test1-frr1 /bin/bash

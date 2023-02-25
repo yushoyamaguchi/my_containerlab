@@ -1,0 +1,19 @@
+name: test2
+
+topology:
+  nodes:
+    frr1:
+      kind: linux
+      image: yamaguchi-frr:test1
+      binds:
+      - frr1/frr.conf:/etc/frr/frr.conf
+      - frr1/daemons:/etc/frr/daemons
+    frr2:
+      kind: linux
+      image: yamaguchi-frr:test1
+      binds:
+      - frr2/daemons:/etc/frr/daemons  
+
+  links:
+    - endpoints: ["frr1:eth1", "frr2:eth1"]
+
